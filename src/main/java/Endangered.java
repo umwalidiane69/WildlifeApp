@@ -8,15 +8,15 @@ public class Endangered extends Animal{
         this.health = health;
         this.age = age;
     }
-//
-//    public String getHealth(){
-//        return health;
-//    }
-//    public String getAge(){
-//        return age;
-//    }
-//    public String getName() {
-//        return name;
-//    }
-//
-//}
+
+    public String getHealth(){
+        return health;
+    }
+    public String getAge(){
+        return age;
+    }
+    public String getName() {
+        return name;
+    }
+
+}
