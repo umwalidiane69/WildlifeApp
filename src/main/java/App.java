@@ -25,21 +25,21 @@ public class App {
             model.put("age", age);
             return new ModelAndView(model, "Allanimals.hbs");
         }, new HandlebarsTemplateEngine());
-//
-//        get("/mamal/new", (request, response) -> {
-//            Map<String, Object>  model= new HashMap();
-//            return new ModelAndView (model,"Animal2-form.hbs");
-//        }, new HandlebarsTemplateEngine());
-//
-//
-//        post("mamal/new", (request, response) -> {
-//                Map<String, Object> model = new HashMap<String, Object>();
-//        String name = request.queryParams("name");
-//           Animal2 anim= new Animal2(name);
-//            model.put("anim", anim);
-//            model.put("name", name);
-//            return new ModelAndView(model, "Allanimals.hbs");
-//        }, new HandlebarsTemplateEngine());
+
+        get("/mamal/new", (request, response) -> {
+            Map<String, Object>  model= new HashMap();
+            return new ModelAndView (model,"Animal2-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+        post("mamal/new", (request, response) -> {
+                Map<String, Object> model = new HashMap<String, Object>();
+        String name = request.queryParams("name");
+           Animal2 anim= new Animal2(name);
+            model.put("anim", anim);
+            model.put("name", name);
+            return new ModelAndView(model, "Allanimals.hbs");
+        }, new HandlebarsTemplateEngine());
 //
 //        get("/si ghting/new", (request, response) -> {
 //            Map<String, Object>  model= new HashMap();
