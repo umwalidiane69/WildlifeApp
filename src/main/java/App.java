@@ -40,21 +40,21 @@ public class App {
             model.put("name", name);
             return new ModelAndView(model, "Allanimals.hbs");
         }, new HandlebarsTemplateEngine());
-//
-//        get("/si ghting/new", (request, response) -> {
-//            Map<String, Object>  model= new HashMap();
-//            return new ModelAndView (model,"AllSightings.hbs");
-//        }, new HandlebarsTemplateEngine());
-//
-//
-//        post("sighting/new", (request, response) -> {
-//            Map<String, Object> model = new HashMap<String, Object>();
-//            String ranger = request.queryParams("ranger");
-//            String location = request.queryParams("location");
-//            Sighting sight = new Sighting(location, ranger);
-//            model.put("sight", sight);
-//            model.put("ranger", ranger);
-//            return new ModelAndView(model, "Allanimals.hbs");
-//        }, new HandlebarsTemplateEngine());
-//    }
-//}
+
+        get("/si ghting/new", (request, response) -> {
+            Map<String, Object>  model= new HashMap();
+            return new ModelAndView (model,"AllSightings.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
+        post("sighting/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String ranger = request.queryParams("ranger");
+            String location = request.queryParams("location");
+            Sighting sight = new Sighting(location, ranger);
+            model.put("sight", sight);
+            model.put("ranger", ranger);
+            return new ModelAndView(model, "Allanimals.hbs");
+        }, new HandlebarsTemplateEngine());
+    }
+}
