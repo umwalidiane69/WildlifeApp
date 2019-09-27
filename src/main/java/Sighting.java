@@ -7,10 +7,10 @@ public class Sighting extends Animal {
         this.location = location;
         this.ranger = ranger;
     }
-//    public String getLocation() {
-//        return location;
-//    }
-//    public String getRanger() {
-//        return ranger;
-//    }
-//}
+    public String getLocation() {
+        return location;
+    }
+    public String getRanger() {
+        return ranger;
+    }
+}
