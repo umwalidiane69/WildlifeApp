@@ -41,7 +41,7 @@ public class App {
             return new ModelAndView(model, "Allanimals.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("/si ghting/new", (request, response) -> {
+        get("/sighting/new", (request, response) -> {
             Map<String, Object>  model= new HashMap();
             return new ModelAndView (model,"AllSightings.hbs");
         }, new HandlebarsTemplateEngine());
