@@ -19,6 +19,7 @@ public class App {
             String health = request.queryParams("health");
             String age = request.queryParams("age");
             Endangered animal= new Endangered(name,health,age);
+            animal.save();
             model.put("animal", animal);
             model.put("name", name);
             model.put("health", health);
@@ -36,6 +37,7 @@ public class App {
                 Map<String, Object> model = new HashMap<String, Object>();
         String name = request.queryParams("name");
            Animal2 anim= new Animal2(name);
+           anim.save();
             model.put("anim", anim);
             model.put("name", name);
             return new ModelAndView(model, "Allanimals.hbs");
@@ -52,6 +54,7 @@ public class App {
             String ranger = request.queryParams("ranger");
             String location = request.queryParams("location");
             Sighting sight = new Sighting(location, ranger);
+            sight.save();
             model.put("sight", sight);
             model.put("ranger", ranger);
             return new ModelAndView(model, "Allanimals.hbs");

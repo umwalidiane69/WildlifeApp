@@ -1,11 +1,12 @@
 {{#partial "content"}}
+<div id="mimi">
         <form action="/sighting/new" method="post">
             <div class="form-group">
                 <label for="ranger">Ranger name</label><br>
-                <input type="text"  placeholder="Enter Ranger name" name="name">
+                <input type="text"  placeholder="Enter Ranger name" name="ranger">
             </div>
             <div class="form-group">
-                <select id="locat"   name="location" >
+                 <select id="Health"  placeholder="Enter Animal name" name="location" >
                         <option value="Zone A">Zone A</option>
                         <option value="Near the River">Near the River</option>
                         <option value="NE Quadrant">NE Quadrant</option>
@@ -16,5 +17,6 @@
                             <button type="submit" class="btn btn-primary mb-2">Submit</button>
                         </div>
                     </form>
+                    </div>
             {{/partial}}
             {{>layout.hbs}}

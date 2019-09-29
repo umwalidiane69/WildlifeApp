@@ -6,7 +6,7 @@ public abstract class Animal {
     public int id;
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animal (name) VALUES (:name,:id)";
+            String sql = "INSERT INTO animals (name) VALUES (:name)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("name", this.name)
 //                    .addParameter("id", this.id)
@@ -14,4 +14,11 @@ public abstract class Animal {
                     .getKey();
         }
     }
+    public static List<Animal> all() {
+        String sql = "SELECT * FROM animals";
+        try(Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql).executeAndFetch(Animal.class);
+        }
+    }
+
 }

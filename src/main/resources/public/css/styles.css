@@ -1,0 +1,43 @@
+#aje{
+ background-image:url("/image/amur-tiger-running-river-animal-260nw-688434076.jpg");
+
+ background-repeat:no-repeat;
+background-size:cover;
+width:100%;
+height:800px;
+
+}
+#mimi{
+ background-image:url("/image/back.jpg");
+
+ background-repeat:no-repeat;
+background-size:cover;
+width:100%;
+height:800px;
+
+}
+#toto{
+ background-image:url("/image/Phibsoo-Wildlife-Sanctuary-cover.jpg");
+
+ background-repeat:no-repeat;
+background-size:cover;
+width:100%;
+height:800px;
+
+}
+#both{
+ background-image:url("/image/animal-love-5.jpg");
+
+ background-repeat:no-repeat;
+background-size:cover;
+width:100%;
+height:800px;
+font-size:20px;
+text-align:center;
+color:wheat;
+}
+form{
+padding-top:250px;
+text-align:center;
+font-size:30px;
+}
