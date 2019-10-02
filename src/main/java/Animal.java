@@ -6,9 +6,10 @@ public abstract class Animal {
     public int id;
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals (name) VALUES (:name)";
+            String sql = "INSERT INTO animals (name,health,age) VALUES (:name,:health,:age)";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("name", this.name)
+
 //                    .addParameter("id", this.id)
                     .executeUpdate()
                     .getKey();

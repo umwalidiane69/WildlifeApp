@@ -1,13 +1,25 @@
 import java.util.HashMap;
 import java.util.Map;
+
+import org.sql2o.Sql2o;
 import spark.ModelAndView;
 import static spark.Spark.*;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
 
 public class App {
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
     public static void main(String[] args){
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
+//        String connectionString = "jdbc:postgresql://ec2-23-21-76-49.compute-1.amazonaws.com:5432/df2ubtmuhc32s7"; //!
+//        Sql2o sql2o = new Sql2o(connectionString, "stdhhdzdeynsis", "43a1b82999c0f772dbbd8f7602f0fa50c75b0c3e0f7b0c2caa36637a9569de10");
         get("/", (request, response) -> {
             Map<String, Object>  model= new HashMap();
             return new ModelAndView (model,"Animal_form.hbs");
@@ -56,6 +68,7 @@ public class App {
             Sighting sight = new Sighting(location, ranger);
             sight.save();
             model.put("sight", sight);
+            model.put("location",location);
             model.put("ranger", ranger);
             return new ModelAndView(model, "Allanimals.hbs");
         }, new HandlebarsTemplateEngine());
